@@ -3,6 +3,7 @@ package com.mchutov.quranify.data
 data class Reciter(val id: Int, val name: String, val style: String)
 data class Surah(val number: Int, val name: String, val arabicName: String)
 data class Playlist(val id: Int, val name: String, val count: Int)
+data class BackgroundVideo(val asset: String, val label: String)
 
 object LocalRepository {
     val reciters = listOf(
@@ -25,6 +26,15 @@ object LocalRepository {
         Playlist(1, "Favorites", 12),
         Playlist(2, "Recently Played", 8),
         Playlist(3, "Night Recitation", 5),
+    )
+
+    val backgroundVideos = listOf(
+        BackgroundVideo("rain_video.mp4", "Rain"),
+        BackgroundVideo("wave_video.mp4", "Waves"),
+        BackgroundVideo("bonfire_video.mp4", "Bonfire"),
+        BackgroundVideo("wind_video.mp4", "Wind"),
+        BackgroundVideo("morning_birds.mp4", "Morning birds"),
+        BackgroundVideo("playerBackground.mp4", "Player"),
     )
 
     fun reciter(id: Int): Reciter? = reciters.find { it.id == id }

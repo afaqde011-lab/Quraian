@@ -1,37 +1,33 @@
 # DESIGN.md — نظام التصميم والموارد البصرية
 
-هذا الملف يشرح أين تقرأ وتعدّل **تصميم** التطبيق. لديك صلاحية كاملة لتعديل كل ما يلي.
+هذا الملف يشرح أين تقرأ وتعدّل **تصميم** التطبيق في السورس النظيف `clean_source/`.
 
-## 1) الألوان والثيم
-- `source/res/values/colors.xml` — كل الألوان (Material + ألوان التطبيق).
-- `source/res/values/styles.xml` — الـ styles والـ themes.
-- `source/res/values-night/` — نسخة الوضع الليلي.
-- `source/res/color/` و `color-night/` — color state lists.
+## 1) الألوان (أزرق غامق زي الأصل)
+- `clean_source/app/src/main/java/com/mchutov/quranify/ui/theme/Theme.kt` —palette Compose الأساسي.
+  - Primary: `#0A2A66`، PrimaryDark: `#061B45`، Accent: `#4FC3F7`
+  - Background: `#061529`، Surface: `#0C2245`
+- `clean_source/app/src/main/res/values/colors.xml` — نفس القيم للـ XML.
 
-أمثلة موجودة: `#6200ee` (primary)، `#3700b3` (primary dark)، `#ba86fc` (dark primary)، `#d0021b` (cast live indicator)، `#fec92f` (cast accent).
+## 2) خلفيات الفيديو ✅
+- الأصول: `clean_source/app/src/main/assets/videos/background/` (12 ملف MP4، ~156MB):
+  `rain_video.mp4`, `wave_video.mp4`, `bonfire_video.mp4`, `wind_video.mp4`, `morning_birds.mp4`, `playerBackground.mp4` (+ نسخ `_full`).
+- المكوّن: `ui/components/VideoBackground.kt` — يشغّل الفيديو بصوت مكتوم وتكرار لوبي من الـ assets.
+- القائمة والاختيار: `data/Repository.kt` → `backgroundVideos`، وتظهر كـ FilterChips في `ui/screens/HomeScreen.kt`.
 
-## 2) الخطوط
-- `source/res/font/` — ملفات الخطوط (TTF). غيّر الخط هنا ثم حدّث مراجع `@font/...` في `styles.xml`.
+## 3) الخطوط والصور
+- `clean_source/app/src/main/res/values/` — النصوص والثيم.
+- `clean_source/app/src/main/assets/flags/` — أعلام القرّاء (SVG).
+- `clean_source/app/src/main/assets/audio/` — مؤثرات صوتية (MP3).
 
-## 3) الأيقونات والصور
-- `source/res/drawable/` و `drawable-hdpi/` و `drawable-xxxhdpi/` و `drawable-anydpi/` — أيقونات/خلفيات.
-- `source/res/mipmap-*/` — أيقونة التطبيق (launcher).
-- `source/assets/flags/` — أعلام القرّاء (SVG).
-- `source/assets/audio/` — مؤثرات صوتية (MP3).
+## 4) الشاشات
+Onboarding → Main tabs (Home, Reciters, Playlists, Insights, Search, Settings) → Player overlays → Audio Stories / Widgets / Deep links.
 
-## 4) التخطيطات
-- `source/res/layout/` و `layout-land/` و `layout-sw600dp/` و `layout-watch/` — تخطيطات XML.
-- معظم الواجهة مبنية بـ **Jetpack Compose** في `source/java/com/mchutov/quranify/**` (ابحث عن `Compose`, `Screen`, `Effect`).
-
-## 5) الشاشات (من docs/NAVIGATION_MAP.md)
-Onboarding → Auth gate → Main tabs (Home, Reciters, Playlists, Insights, Search, Settings) → Player overlays (BottomSheet / FullScreen / Tafsir / SoundEffect) → Audio Stories / Widgets / Deep links.
-
-## 6) كيف تعدّل التصميم بسهولة
-1. افتح `source/res/values/colors.xml` وغيّر القيم.
-2. افتح الملف المقابل في `source/java/com/mchutov/quranify/<feature>/...` لتعديل الـ Compose UI.
-3. راجع `docs/NAVIGATION_MAP.md` عشان ما تكسرش مسار التنقل.
+## 5) كيف تعدّل التصميم
+1. غيّر الألوان في `Theme.kt` و `colors.xml` معاً.
+2. غيّر خلفية الفيديو بإضافة ملف MP4 في `assets/videos/background/` ثم أضفه لقائمة `backgroundVideos`.
+3. عدّل Compose UI في `ui/screens/*.kt`.
 4. حدّث هذا الملف بملخص التغيير.
 
-## 7) قيود
+## 6) قيود
 - لا تضف أي مورد أو مكوّن من Google (GMS/Firebase/PairIP).
-- حافظ على أسماء الموارد المستخدمة في الكود أو حدّث كل مراجعها معاً.
+- حافظ على أسماء الموارد أو حدّث كل مراجعها معاً.
