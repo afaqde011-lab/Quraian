@@ -4,6 +4,7 @@ data class Reciter(val id: Int, val name: String, val style: String)
 data class Surah(val number: Int, val name: String, val arabicName: String)
 data class Playlist(val id: Int, val name: String, val count: Int)
 data class BackgroundVideo(val asset: String, val label: String)
+data class SoundEffect(val asset: String, val label: String)
 
 object LocalRepository {
     val reciters = listOf(
@@ -35,6 +36,16 @@ object LocalRepository {
         BackgroundVideo("wind_video.mp4", "Wind"),
         BackgroundVideo("morning_birds.mp4", "Morning birds"),
         BackgroundVideo("playerBackground.mp4", "Player"),
+    )
+
+    val soundEffects = listOf(
+        SoundEffect("wave_effect.mp3", "Sea waves"),
+        SoundEffect("calm_river.mp3", "River"),
+        SoundEffect("calm_rain.mp3", "Rain"),
+        SoundEffect("light_wind.mp3", "Wind"),
+        SoundEffect("calm_bonfire.mp3", "Bonfire"),
+        SoundEffect("morning_birds.mp3", "Morning birds"),
+        SoundEffect("cat_puring.mp3", "Cat purring"),
     )
 
     fun reciter(id: Int): Reciter? = reciters.find { it.id == id }

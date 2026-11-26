@@ -14,10 +14,15 @@
 - المكوّن: `ui/components/VideoBackground.kt` — يشغّل الفيديو بصوت مكتوم وتكرار لوبي من الـ assets.
 - القائمة والاختيار: `data/Repository.kt` → `backgroundVideos`، وتظهر كـ FilterChips في `ui/screens/HomeScreen.kt`.
 
-## 3) الخطوط والصور
+## 3) المؤثرات الصوتية ✅
+- الأصول: `clean_source/app/src/main/assets/audio/` (7 ملفات MP3 من التطبيق الأصلي):
+  `wave_effect.mp3` (بحر/أمواج)، `calm_river.mp3`، `calm_rain.mp3`، `light_wind.mp3`، `calm_bonfire.mp3`، `morning_birds.mp3`، `cat_puring.mp3`.
+- المشغّل: `audio/SoundPlayer.kt` (MediaPlayer، لوبي، من الـ assets).
+- الواجهة: أزرار اختيار في `ui/screens/SettingsScreen.kt` + زر Stop.
+
+## 4) الخطوط والصور
 - `clean_source/app/src/main/res/values/` — النصوص والثيم.
 - `clean_source/app/src/main/assets/flags/` — أعلام القرّاء (SVG).
-- `clean_source/app/src/main/assets/audio/` — مؤثرات صوتية (MP3).
 
 ## 4) الشاشات
 Onboarding → Main tabs (Home, Reciters, Playlists, Insights, Search, Settings) → Player overlays → Audio Stories / Widgets / Deep links.
