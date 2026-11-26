@@ -27,7 +27,12 @@
 ## 4) الشاشات
 Onboarding → Main tabs (Home, Reciters, Playlists, Insights, Search, Settings) → Player overlays → Audio Stories / Widgets / Deep links.
 
-## 5) توحيد الشكل على كل الشاشات ✅
+## 5) مشغّل ملء الشاشة (من فيديو TikTok للتطبيق نفسه) ✅
+- `ui/screens/PlayerScreen.kt`: خلفية فيديو طبيعية (rain_video.mp4) + تراكب شفاف + اسم السورة والقارئ + أزرار previous/pause/next + نجمة المفضلة + المؤقت.
+- بيظهر لما تضغط على أي سورة من الشاشة الرئيسية، ويتقفل بزر Close.
+- الصورة المطابقة: فيديو mzaed76 على TikTok (نفس التطبيق `com.mchutov.Quranify`).
+
+## 6) توحيد الشكل على كل الشاشات ✅
 - المكوّن المشترك: `ui/components/ScreenShell.kt` — خلفية فيديو + تراكب أزرق غامق + عنوان موحّد.
 - كل الشاشات (`HomeScreen`, `RecitersScreen`, `PlaylistsScreen`, `InsightsScreen`, `SearchScreen`, `SettingsScreen`) تستخدم نفس الـ Shell، فالشكل والتصميم متطابقان.
 - شاشة الرئيسية فيها إضافات: اختيار خلفية الفيديو + اختيار المؤثر الصوتي.

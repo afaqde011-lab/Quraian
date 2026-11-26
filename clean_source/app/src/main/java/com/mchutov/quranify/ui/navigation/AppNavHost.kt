@@ -19,12 +19,14 @@ import androidx.compose.material.icons.filled.PlaylistPlay
 import androidx.compose.material.icons.filled.ShowChart
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
+import com.mchutov.quranify.data.LocalRepository
 import com.mchutov.quranify.ui.screens.HomeScreen
 import com.mchutov.quranify.ui.screens.RecitersScreen
 import com.mchutov.quranify.ui.screens.PlaylistsScreen
 import com.mchutov.quranify.ui.screens.InsightsScreen
 import com.mchutov.quranify.ui.screens.SearchScreen
 import com.mchutov.quranify.ui.screens.SettingsScreen
+import com.mchutov.quranify.ui.screens.PlayerScreen
 
 private val tabs = listOf(
     "Sounds" to Icons.Default.Home,
@@ -62,6 +64,13 @@ fun AppNavHost() {
                 3 -> SearchScreen()
                 4 -> SettingsScreen()
                 5 -> InsightsScreen()
+            }
+
+            if (playing != -1) {
+                PlayerScreen(
+                    surah = LocalRepository.surahs.find { it.number == playing },
+                    onClose = { playing = -1 },
+                )
             }
         }
     }
