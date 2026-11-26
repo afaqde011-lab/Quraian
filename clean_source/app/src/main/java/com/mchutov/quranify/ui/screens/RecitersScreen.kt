@@ -13,22 +13,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mchutov.quranify.data.LocalRepository
+import com.mchutov.quranify.ui.components.ScreenShell
 
 @Composable
 fun RecitersScreen() {
-    val items = LocalRepository.reciters
-    LazyColumn(Modifier.padding(16.dp)) {
-        item { Text("Reciters", style = MaterialTheme.typography.headlineMedium) }
-        items(items) { item ->
-            Card(
-                Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 4.dp)
-                    .clickable { Unit },
-            ) {
-                Column(Modifier.padding(16.dp)) {
-                    Text(item.name, style = MaterialTheme.typography.titleMedium)
-                    Text(item.style, style = MaterialTheme.typography.bodyMedium)
+    ScreenShell(title = "Reciters") {
+        LazyColumn(Modifier.padding(top = 8.dp)) {
+            items(LocalRepository.reciters) { reciter ->
+                Card(
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 4.dp)
+                        .clickable { },
+                ) {
+                    Column(Modifier.padding(16.dp)) {
+                        Text(reciter.name, style = MaterialTheme.typography.titleMedium)
+                        Text(reciter.style, style = MaterialTheme.typography.bodyMedium)
+                    }
                 }
             }
         }

@@ -13,22 +13,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mchutov.quranify.data.LocalRepository
+import com.mchutov.quranify.ui.components.ScreenShell
 
 @Composable
 fun PlaylistsScreen() {
-    val items = LocalRepository.playlists
-    LazyColumn(Modifier.padding(16.dp)) {
-        item { Text("Playlists", style = MaterialTheme.typography.headlineMedium) }
-        items(items) { item ->
-            Card(
-                Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 4.dp)
-                    .clickable { Unit },
-            ) {
-                Column(Modifier.padding(16.dp)) {
-                    Text(item.name, style = MaterialTheme.typography.titleMedium)
-                    Text(item.count.toString(), style = MaterialTheme.typography.bodyMedium)
+    ScreenShell(title = "Playlists") {
+        LazyColumn(Modifier.padding(top = 8.dp)) {
+            items(LocalRepository.playlists) { playlist ->
+                Card(
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 4.dp)
+                        .clickable { },
+                ) {
+                    Column(Modifier.padding(16.dp)) {
+                        Text(playlist.name, style = MaterialTheme.typography.titleMedium)
+                        Text("${playlist.count} items", style = MaterialTheme.typography.bodyMedium)
+                    }
                 }
             }
         }

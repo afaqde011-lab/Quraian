@@ -1,9 +1,10 @@
 package com.mchutov.quranify.ui.screens
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -18,6 +19,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.mchutov.quranify.audio.SoundPlayer
 import com.mchutov.quranify.data.LocalRepository
+import com.mchutov.quranify.ui.components.ScreenShell
 
 @Composable
 fun SettingsScreen() {
@@ -28,11 +30,9 @@ fun SettingsScreen() {
         onDispose { SoundPlayer.stop() }
     }
 
-    Column(Modifier.padding(16.dp)) {
-        Text("Settings", style = MaterialTheme.typography.headlineMedium)
-
-        Text("Sound effects", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 12.dp))
-        Row {
+    ScreenShell(title = "Settings") {
+        Text("Sound effects", style = MaterialTheme.typography.titleMedium, color = androidx.compose.ui.graphics.Color.White)
+        Row(modifier = Modifier.padding(top = 6.dp)) {
             LocalRepository.soundEffects.forEachIndexed { index, effect ->
                 FilterChip(
                     selected = playing == index,
@@ -60,9 +60,15 @@ fun SettingsScreen() {
             Text("Stop sound")
         }
 
-        Text("General", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 16.dp))
-        listOf("Edit details", "Notifications", "Downloads", "Sleep timer", "About").forEach {
-            Text(it, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.padding(vertical = 8.dp))
+        Text("General", style = MaterialTheme.typography.titleMedium, color = androidx.compose.ui.graphics.Color.White, modifier = Modifier.padding(top = 16.dp))
+        listOf("Edit details", "Notifications", "Downloads", "Sleep timer", "About").forEach { label ->
+            Card(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 4.dp),
+            ) {
+                Text(label, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.padding(16.dp))
+            }
         }
     }
 }

@@ -27,7 +27,12 @@
 ## 4) الشاشات
 Onboarding → Main tabs (Home, Reciters, Playlists, Insights, Search, Settings) → Player overlays → Audio Stories / Widgets / Deep links.
 
-## 5) كيف تعدّل التصميم
+## 5) توحيد الشكل على كل الشاشات ✅
+- المكوّن المشترك: `ui/components/ScreenShell.kt` — خلفية فيديو + تراكب أزرق غامق + عنوان موحّد.
+- كل الشاشات (`HomeScreen`, `RecitersScreen`, `PlaylistsScreen`, `InsightsScreen`, `SearchScreen`, `SettingsScreen`) تستخدم نفس الـ Shell، فالشكل والتصميم متطابقان.
+- شاشة الرئيسية فيها إضافات: اختيار خلفية الفيديو + اختيار المؤثر الصوتي.
+
+## 6) كيف تعدّل التصميم
 1. غيّر الألوان في `Theme.kt` و `colors.xml` معاً.
 2. غيّر خلفية الفيديو بإضافة ملف MP4 في `assets/videos/background/` ثم أضفه لقائمة `backgroundVideos`.
 3. عدّل Compose UI في `ui/screens/*.kt`.
