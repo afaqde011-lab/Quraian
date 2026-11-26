@@ -28,7 +28,7 @@ fun ScreenShell(
         Box(
             Modifier
                 .fillMaxSize()
-                .background(Color(0xB3061529)),
+                .background(Color(0x80061529)),
         ) {
             Column(
                 Modifier
