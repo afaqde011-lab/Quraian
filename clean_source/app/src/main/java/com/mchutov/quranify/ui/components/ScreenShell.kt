@@ -23,7 +23,11 @@ fun ScreenShell(
     videoAsset: String = "playerBackground.mp4",
     content: @Composable ColumnScope.() -> Unit,
 ) {
-    Box(Modifier.fillMaxSize()) {
+    Box(
+        Modifier
+            .fillMaxSize()
+            .background(Color(0xFF061529)),
+    ) {
         VideoBackground(videoAsset, Modifier.fillMaxSize())
         Box(
             Modifier
