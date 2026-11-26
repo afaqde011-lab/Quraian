@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="file" path="datastore/Reciter.pb" />
+        <exclude domain="file" path="reciters/" />
+        <exclude domain="file" path="collections/" />
+        <exclude domain="file" path="audio_stories/" />
+        <exclude domain="file" path="datastore/AudioStoryCatalog.pb" />
+        <exclude domain="database" path="audio_stories_database" />
+        <exclude domain="sharedpref" path="encrypted_storage.xml" />
+        <exclude domain="sharedpref" path="encrypted_storage_fallback.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="datastore/Reciter.pb" />
+        <exclude domain="file" path="reciters/" />
+        <exclude domain="file" path="collections/" />
+        <exclude domain="file" path="audio_stories/" />
+        <exclude domain="file" path="datastore/AudioStoryCatalog.pb" />
+        <exclude domain="database" path="audio_stories_database" />
+        <exclude domain="sharedpref" path="encrypted_storage.xml" />
+        <exclude domain="sharedpref" path="encrypted_storage_fallback.xml" />
+    </device-transfer>
+</data-extraction-rules>

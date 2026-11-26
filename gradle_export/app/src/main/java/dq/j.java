@@ -1,0 +1,21 @@
+package dq;
+
+import bt.m1;
+
+public final class j extends m00.c {
+    public Object A;
+    public int B;
+    public final m1 C;
+
+    public j(m1 m1Var, k00.c cVar) {
+        super(cVar);
+        this.C = m1Var;
+    }
+
+    @Override
+    public final Object invokeSuspend(Object obj) {
+        this.A = obj;
+        this.B |= Integer.MIN_VALUE;
+        return this.C.emit(null, this);
+    }
+}

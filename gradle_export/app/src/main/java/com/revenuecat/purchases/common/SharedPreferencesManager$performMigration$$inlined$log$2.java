@@ -1,0 +1,22 @@
+package com.revenuecat.purchases.common;
+
+import com.google.android.gms.internal.measurement.x5;
+import h00.q;
+import kotlin.Metadata;
+import kotlin.jvm.internal.n;
+import u00.a;
+
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001H\n¢\u0006\u0002\b\u0002¨\u0006\u0003"}, d2 = {"<anonymous>", "", "invoke", "com/revenuecat/purchases/common/LogWrapperKt$log$fullMessageBuilder$1"}, k = 3, mv = {1, 8, 0}, xi = 48)
+public final class SharedPreferencesManager$performMigration$$inlined$log$2 extends n implements a {
+    final LogIntent $intent;
+
+    public SharedPreferencesManager$performMigration$$inlined$log$2(LogIntent logIntent) {
+        super(0);
+        this.$intent = logIntent;
+    }
+
+    @Override
+    public final String invoke() {
+        return x5.n(new StringBuilder(), q.R0(this.$intent.getEmojiList(), "", null, null, null, 62), " Finished shared preferences migration from legacy to RevenueCat-specific preferences");
+    }
+}

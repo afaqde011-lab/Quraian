@@ -1,0 +1,35 @@
+package b4;
+
+import b3.e1;
+import c3.d2;
+import kotlin.Metadata;
+
+@Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\bÂ\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0003\u0010\u0004¨\u0006\u0005"}, d2 = {"Lb4/s;", "Lb3/e1;", "Lb4/u;", "<init>", "()V", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
+final class s extends e1 {
+    public static final s B = new s();
+
+    private s() {
+    }
+
+    @Override
+    public final b2.q d() {
+        return new u();
+    }
+
+    public final boolean equals(Object obj) {
+        return obj == this;
+    }
+
+    @Override
+    public final void h(d2 d2Var) {
+        d2Var.f2644a = "FocusGroupProperties";
+    }
+
+    public final int hashCode() {
+        return -1929324230;
+    }
+
+    @Override
+    public final void i(b2.q qVar) {
+    }
+}

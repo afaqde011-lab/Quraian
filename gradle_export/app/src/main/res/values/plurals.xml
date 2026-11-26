@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="audio_stories_episode_count">
+        <item quantity="one">%d episode</item>
+        <item quantity="other">%d episodes</item>
+    </plurals>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="one">Fast forward %d second</item>
+        <item quantity="other">Fast forward %d seconds</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="one">Rewind %d second</item>
+        <item quantity="other">Rewind %d seconds</item>
+    </plurals>
+    <plurals name="new_reciters_added">
+        <item quantity="one">%d new reciter added</item>
+        <item quantity="other">%d new reciters added</item>
+    </plurals>
+    <plurals name="streak_day">
+        <item quantity="one">%d Day</item>
+        <item quantity="other">%d Days</item>
+    </plurals>
+    <plurals name="streak_detail_beat_record_description">
+        <item quantity="one">Your current streak is %d day. Keep listening to beat your record!</item>
+        <item quantity="other">Your current streak is %d days. Keep listening to beat your record!</item>
+    </plurals>
+    <plurals name="timer_minute">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="widget_favorites_surah_count">
+        <item quantity="one">%1$d surah</item>
+        <item quantity="other">%1$d surahs</item>
+    </plurals>
+</resources>

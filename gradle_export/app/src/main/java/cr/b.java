@@ -1,0 +1,6 @@
+package cr;
+
+import a10.h0;
+
+public final class b extends h0 {
+}

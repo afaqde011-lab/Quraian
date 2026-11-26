@@ -1,0 +1,15 @@
+package s10;
+
+public final class o extends kotlin.jvm.internal.p {
+    public static final o B = new o(r0.class, "flags", "getFlags$kotlin_metadata()I", 0);
+
+    @Override
+    public final Object get(Object obj) {
+        return Integer.valueOf(((r0) obj).a);
+    }
+
+    @Override
+    public final void p(Object obj, Object obj2) {
+        ((r0) obj).a = ((Number) obj2).intValue();
+    }
+}

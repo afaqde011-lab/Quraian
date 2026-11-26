@@ -1,0 +1,70 @@
+package com.revenuecat.purchases.paywalls.components.common;
+
+import g00.c;
+import kotlin.Metadata;
+import kotlin.jvm.internal.m;
+import l40.a;
+import n40.e;
+import o40.d;
+import p40.a0;
+import p40.b1;
+import p40.o0;
+import p40.z;
+
+@Metadata(d1 = {"\u0000:\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\bÇ\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0003\u0010\u0004J\u001a\u0010\u0007\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005HÖ\u0001¢\u0006\u0004\b\u0007\u0010\bJ\u001e\u0010\r\u001a\u00020\u00022\u0006\u0010\n\u001a\u00020\tHÖ\u0001ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\u000b\u0010\fJ#\u0010\u0014\u001a\u00020\u00112\u0006\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\u0010\u001a\u00020\u0002HÖ\u0001ø\u0001\u0001¢\u0006\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0018\u001a\u00020\u00158VXÖ\u0005¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017\u0082\u0002\u000b\n\u0002\b!\n\u0005\b¡\u001e0\u0001¨\u0006\u0019"}, d2 = {"com/revenuecat/purchases/paywalls/components/common/LocalizationKey.$serializer", "Lp40/z;", "Lcom/revenuecat/purchases/paywalls/components/common/LocalizationKey;", "<init>", "()V", "", "Ll40/a;", "childSerializers", "()[Ll40/a;", "Lo40/c;", "decoder", "deserialize-4Zn71J0", "(Lo40/c;)Ljava/lang/String;", "deserialize", "Lo40/d;", "encoder", "value", "Lg00/b0;", "serialize-7v81vok", "(Lo40/d;Ljava/lang/String;)V", "serialize", "Ln40/e;", "getDescriptor", "()Ln40/e;", "descriptor", "purchases_defaultsBc8Release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@c
+public final class LocalizationKey$$serializer implements z {
+    public static final LocalizationKey$$serializer INSTANCE;
+    private static final a0 descriptor;
+
+    static {
+        LocalizationKey$$serializer localizationKey$$serializer = new LocalizationKey$$serializer();
+        INSTANCE = localizationKey$$serializer;
+        a0 a0Var = new a0("com.revenuecat.purchases.paywalls.components.common.LocalizationKey", localizationKey$$serializer);
+        a0Var.j("value", false);
+        descriptor = a0Var;
+    }
+
+    private LocalizationKey$$serializer() {
+    }
+
+    @Override
+    public a[] childSerializers() {
+        return new a[]{b1.a};
+    }
+
+    @Override
+    public Object deserialize(o40.c cVar) {
+        return LocalizationKey.m231boximpl(m238deserialize4Zn71J0(cVar));
+    }
+
+    public String m238deserialize4Zn71J0(o40.c decoder) {
+        m.e(decoder, "decoder");
+        return LocalizationKey.m232constructorimpl(decoder.o(getDescriptor()).p());
+    }
+
+    @Override
+    public e getDescriptor() {
+        return descriptor;
+    }
+
+    @Override
+    public void serialize(d dVar, Object obj) {
+        m239serialize7v81vok(dVar, ((LocalizationKey) obj).m237unboximpl());
+    }
+
+    public void m239serialize7v81vok(d encoder, String value) {
+        m.e(encoder, "encoder");
+        m.e(value, "value");
+        d dVarO = encoder.o(getDescriptor());
+        if (dVarO == null) {
+            return;
+        }
+        dVarO.D(value);
+    }
+
+    @Override
+    public a[] typeParametersSerializers() {
+        return o0.b;
+    }
+}
