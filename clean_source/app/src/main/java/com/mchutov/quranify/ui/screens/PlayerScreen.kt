@@ -1,6 +1,7 @@
 package com.mchutov.quranify.ui.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,6 +16,7 @@ import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.SkipNext
 import androidx.compose.material.icons.filled.SkipPrevious
 import androidx.compose.material.icons.filled.StarBorder
+import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -48,13 +50,21 @@ fun PlayerScreen(surah: Surah?, onClose: () -> Unit) {
                     Icon(Icons.Default.Close, contentDescription = "Close", tint = Color.White)
                 }
                 Spacer(Modifier.weight(1f))
-                Text(
-                    "مكيا",
-                    color = Color.White,
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .background(Color(0x55FFFFFF), androidx.compose.foundation.shape.RoundedCornerShape(16.dp))
+                        .clickable { }
                         .padding(horizontal = 12.dp, vertical = 6.dp),
-                )
+                ) {
+                    Icon(
+                        Icons.Default.VolumeUp,
+                        contentDescription = "Sound",
+                        tint = Color.White,
+                        modifier = Modifier.padding(end = 6.dp),
+                    )
+                    Text("الصوت", color = Color.White)
+                }
             }
 
             Column(
