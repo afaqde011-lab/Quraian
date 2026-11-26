@@ -10,42 +10,63 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.mchutov.quranify.ui.theme.Background
+import com.mchutov.quranify.ui.theme.PrimaryDark
 
 /**
- * Shared visual shell for every screen: looping video background,
- * deep-blue overlay, and consistent title/content styling.
+ * Shared visual shell matching the original Quranify screenshots:
+ * black canvas, subtle blue gradient at top, optional ambient video,
+ * white title and consistent spacing.
  */
 @Composable
 fun ScreenShell(
     title: String,
     videoAsset: String = "playerBackground.mp4",
+    showVideo: Boolean = true,
     content: @Composable ColumnScope.() -> Unit,
 ) {
     Box(
         Modifier
             .fillMaxSize()
-            .background(Color(0xFF061529)),
+            .background(Background),
     ) {
-        VideoBackground(videoAsset, Modifier.fillMaxSize())
         Box(
             Modifier
                 .fillMaxSize()
-                .background(Color(0x80061529)),
-        ) {
-            Column(
+                .background(
+                    Brush.verticalGradient(
+                        listOf(PrimaryDark, Color.Black, Color.Black),
+                    ),
+                ),
+        )
+        if (showVideo) {
+            VideoBackground(
+                videoAsset,
                 Modifier
                     .fillMaxSize()
-                    .padding(16.dp),
-            ) {
-                Text(
-                    title,
-                    style = MaterialTheme.typography.headlineMedium,
-                    color = Color.White,
-                )
-                content()
-            }
+                    .alpha(0.35f),
+            )
+        }
+        Box(
+            Modifier
+                .fillMaxSize()
+                .background(Color(0x99000000)),
+        )
+        Column(
+            Modifier
+                .fillMaxSize()
+                .padding(16.dp),
+        ) {
+            Text(
+                title,
+                style = MaterialTheme.typography.headlineMedium,
+                color = Color.White,
+            )
+            content()
         }
     }
 }

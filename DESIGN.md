@@ -2,10 +2,10 @@
 
 هذا الملف يشرح أين تقرأ وتعدّل **تصميم** التطبيق في السورس النظيف `clean_source/`.
 
-## 1) الألوان (أزرق غامق زي الأصل)
-- `clean_source/app/src/main/java/com/mchutov/quranify/ui/theme/Theme.kt` —palette Compose الأساسي.
-  - Primary: `#0A2A66`، PrimaryDark: `#061B45`، Accent: `#4FC3F7`
-  - Background: `#061529`، Surface: `#0C2245`
+## 1) الألوان (مطابقة لسكرين شوت Uptodown الأصلية)
+- `clean_source/app/src/main/java/com/mchutov/quranify/ui/theme/Theme.kt` — palette Compose الأساسي.
+  - Background: `#000000` (أسود)، Primary أزرق: `#2E7CF6`، Gold: `#D4AF37`
+  - Surface: `#141416`، تدرّج أزرق خفيف أعلى الشاشة من `#0A1B3D`
 - `clean_source/app/src/main/res/values/colors.xml` — نفس القيم للـ XML.
 
 ## 2) خلفيات الفيديو ✅

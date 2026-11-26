@@ -27,12 +27,12 @@ import com.mchutov.quranify.ui.screens.SearchScreen
 import com.mchutov.quranify.ui.screens.SettingsScreen
 
 private val tabs = listOf(
-    "Home" to Icons.Default.Home,
-    "Reciters" to Icons.Default.Person,
-    "Playlists" to Icons.Default.PlaylistPlay,
+    "Sounds" to Icons.Default.Home,
+    "All Surahs" to Icons.Default.Person,
+    "You help" to Icons.Default.PlaylistPlay,
+    "AirPlay" to Icons.Default.Search,
+    "Control" to Icons.Default.Settings,
     "Insights" to Icons.Default.ShowChart,
-    "Search" to Icons.Default.Search,
-    "Settings" to Icons.Default.Settings,
 )
 
 @Composable
@@ -59,9 +59,9 @@ fun AppNavHost() {
                 0 -> HomeScreen(onPlay = { playing = it }, playing = playing)
                 1 -> RecitersScreen()
                 2 -> PlaylistsScreen()
-                3 -> InsightsScreen()
-                4 -> SearchScreen()
-                5 -> SettingsScreen()
+                3 -> SearchScreen()
+                4 -> SettingsScreen()
+                5 -> InsightsScreen()
             }
         }
     }

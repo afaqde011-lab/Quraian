@@ -2,17 +2,18 @@ package com.mchutov.quranify.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-// Quranify original palette: deep navy blue
-val Primary = Color(0xFF0A2A66)
-val PrimaryDark = Color(0xFF061B45)
-val Accent = Color(0xFF4FC3F7)
-val BackgroundDark = Color(0xFF061529)
-val SurfaceDark = Color(0xFF0C2245)
-val BackgroundLight = Color(0xFFE8F0FA)
+// Palette taken from the original Quranify screenshots:
+// black canvas, bright blue accent, warm gold highlights.
+val Primary = Color(0xFF2E7CF6)
+val PrimaryDark = Color(0xFF0A1B3D)
+val Accent = Color(0xFFD4AF37)
+val Background = Color(0xFF000000)
+val Surface = Color(0xFF141416)
+val SurfaceLight = Color(0xFF1E1E22)
+val OnSurface = Color(0xFFFFFFFF)
 
 private val DarkColors = darkColorScheme(
     primary = Primary,
@@ -21,23 +22,13 @@ private val DarkColors = darkColorScheme(
     onPrimaryContainer = Color.White,
     secondary = Accent,
     onSecondary = Color.Black,
-    background = BackgroundDark,
+    background = Background,
     onBackground = Color.White,
-    surface = SurfaceDark,
-    onSurface = Color.White,
-)
-
-private val LightColors = lightColorScheme(
-    primary = Primary,
-    onPrimary = Color.White,
-    secondary = Accent,
-    background = BackgroundLight,
+    surface = Surface,
+    onSurface = OnSurface,
 )
 
 @Composable
-fun QuranifyTheme(darkTheme: Boolean = true, content: @Composable () -> Unit) {
-    MaterialTheme(
-        colorScheme = if (darkTheme) DarkColors else LightColors,
-        content = content,
-    )
+fun QuranifyTheme(content: @Composable () -> Unit) {
+    MaterialTheme(colorScheme = DarkColors, content = content)
 }
